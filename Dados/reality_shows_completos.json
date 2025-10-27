@@ -1,0 +1,733 @@
+[
+  {
+    "nome": "Big Brother Brasil",
+    "emissora": "TV Globo",
+    "audiencia_pontos": 25.3,
+    "participantes": [
+      {
+        "nome": "Ana Souza",
+        "idade": 29,
+        "total_votos": 1200,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Viagem ao Caribe",
+            "valor": 20000
+          }
+        ]
+      },
+      {
+        "nome": "Carlos Mendes",
+        "idade": 32,
+        "total_votos": 950,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Smart TV 55\"",
+            "valor": 4000
+          }
+        ]
+      },
+      {
+        "nome": "Luana Ribeiro",
+        "idade": 27,
+        "total_votos": 1320,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Notebook Gamer",
+            "valor": 8500
+          }
+        ]
+      },
+      {
+        "nome": "Pedro Silva",
+        "idade": 30,
+        "total_votos": 870,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Smartphone",
+            "valor": 3500
+          }
+        ]
+      },
+      {
+        "nome": "Rafaela Costa",
+        "idade": 25,
+        "total_votos": 1440,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Vale Compras",
+            "valor": 2000
+          }
+        ]
+      },
+      {
+        "nome": "Tiago Azevedo",
+        "idade": 35,
+        "total_votos": 1020,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Tablet",
+            "valor": 2500
+          },
+          {
+            "descricao": "Fone Bluetooth",
+            "valor": 500
+          },
+          {
+            "descricao": "Vale Compras Extra",
+            "valor": 1000
+          }
+        ]
+      },
+      {
+        "nome": "Fernanda Lopes",
+        "idade": 26,
+        "total_votos": 980,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Câmera Fotográfica",
+            "valor": 3000
+          },
+          {
+            "descricao": "Smart Speaker",
+            "valor": 700
+          },
+          {
+            "descricao": "Curso Online Premium",
+            "valor": 1500
+          }
+        ]
+      },
+      {
+        "nome": "João Pedro",
+        "idade": 28,
+        "total_votos": 1600,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Curso Online",
+            "valor": 1000
+          },
+          {
+            "descricao": "Notebook UltraSlim",
+            "valor": 8000
+          },
+          {
+            "descricao": "Voucher de Viagem",
+            "valor": 3000
+          }
+        ]
+      },
+      {
+        "nome": "Marina Figueiredo",
+        "idade": 33,
+        "total_votos": 1100,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Viagem Nacional",
+            "valor": 5000
+          }
+        ]
+      },
+      {
+        "nome": "Bruno Teixeira",
+        "idade": 31,
+        "total_votos": 760,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Voucher Restaurante",
+            "valor": 800
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nome": "A Fazenda",
+    "emissora": "Record TV",
+    "audiencia_pontos": 16.7,
+    "participantes": [
+      {
+        "nome": "Lucas Andrade",
+        "idade": 30,
+        "total_votos": 870,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Relógio de luxo",
+            "valor": 7000
+          },
+          {
+            "descricao": "Voucher de Viagem",
+            "valor": 3000
+          },
+          {
+            "descricao": "Vale Compras Extra",
+            "valor": 1000
+          }
+        ]
+      },
+      {
+        "nome": "Camila Duarte",
+        "idade": 24,
+        "total_votos": 930,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Viagem à Europa",
+            "valor": 25000
+          },
+          {
+            "descricao": "Notebook UltraSlim",
+            "valor": 8000
+          }
+        ]
+      },
+      {
+        "nome": "Henrique Lima",
+        "idade": 34,
+        "total_votos": 680,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Bicicleta Elétrica",
+            "valor": 6000
+          }
+        ]
+      },
+      {
+        "nome": "Juliana Pires",
+        "idade": 29,
+        "total_votos": 1100,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Curso de Teatro",
+            "valor": 1500
+          }
+        ]
+      },
+      {
+        "nome": "Felipe Torres",
+        "idade": 27,
+        "total_votos": 1200,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Vale Compras",
+            "valor": 2500
+          },
+          {
+            "descricao": "Notebook UltraSlim",
+            "valor": 8000
+          }
+        ]
+      },
+      {
+        "nome": "Mariana Souza",
+        "idade": 26,
+        "total_votos": 770,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Smartwatch",
+            "valor": 1800
+          },
+          {
+            "descricao": "Relógio Inteligente",
+            "valor": 1200
+          }
+        ]
+      },
+      {
+        "nome": "Paulo Ricardo",
+        "idade": 33,
+        "total_votos": 910,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Câmera Ação",
+            "valor": 1500
+          }
+        ]
+      },
+      {
+        "nome": "Vanessa Alves",
+        "idade": 28,
+        "total_votos": 1300,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Curso de Inglês",
+            "valor": 2000
+          }
+        ]
+      },
+      {
+        "nome": "Renato Gomes",
+        "idade": 35,
+        "total_votos": 1000,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Home Theater",
+            "valor": 4500
+          }
+        ]
+      },
+      {
+        "nome": "Sabrina Costa",
+        "idade": 31,
+        "total_votos": 1500,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Carro Popular",
+            "valor": 55000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nome": "No Limite",
+    "emissora": "TV Globo",
+    "audiencia_pontos": 14.5,
+    "participantes": [
+      {
+        "nome": "Rodrigo Silva",
+        "idade": 29,
+        "total_votos": 780,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Kit Aventura",
+            "valor": 1200
+          },
+          {
+            "descricao": "Fone Bluetooth",
+            "valor": 500
+          },
+          {
+            "descricao": "Câmera Digital",
+            "valor": 2500
+          }
+        ]
+      },
+      {
+        "nome": "Patrícia Lima",
+        "idade": 27,
+        "total_votos": 820,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Viagem Amazônia",
+            "valor": 8000
+          }
+        ]
+      },
+      {
+        "nome": "Ricardo Gomes",
+        "idade": 30,
+        "total_votos": 660,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Equipamento Camping",
+            "valor": 1500
+          },
+          {
+            "descricao": "Voucher de Viagem",
+            "valor": 3000
+          }
+        ]
+      },
+      {
+        "nome": "Elisa Ferreira",
+        "idade": 25,
+        "total_votos": 910,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Curso de Sobrevivência",
+            "valor": 900
+          },
+          {
+            "descricao": "Voucher de Viagem",
+            "valor": 3000
+          },
+          {
+            "descricao": "Relógio Inteligente",
+            "valor": 1200
+          }
+        ]
+      },
+      {
+        "nome": "Caio Andrade",
+        "idade": 32,
+        "total_votos": 1040,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Drone",
+            "valor": 2500
+          }
+        ]
+      },
+      {
+        "nome": "Lívia Rocha",
+        "idade": 28,
+        "total_votos": 990,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Bota de Trilha",
+            "valor": 600
+          }
+        ]
+      },
+      {
+        "nome": "Joana Carvalho",
+        "idade": 26,
+        "total_votos": 730,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Mochila Técnica",
+            "valor": 400
+          }
+        ]
+      },
+      {
+        "nome": "Mateus Brito",
+        "idade": 33,
+        "total_votos": 870,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Lanterna Profissional",
+            "valor": 350
+          }
+        ]
+      },
+      {
+        "nome": "Nathalia Sousa",
+        "idade": 29,
+        "total_votos": 1180,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "GoPro",
+            "valor": 2500
+          },
+          {
+            "descricao": "Fone Bluetooth",
+            "valor": 500
+          },
+          {
+            "descricao": "Notebook UltraSlim",
+            "valor": 8000
+          }
+        ]
+      },
+      {
+        "nome": "Diego Tavares",
+        "idade": 35,
+        "total_votos": 970,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Curso de Escalada",
+            "valor": 1200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nome": "MasterChef Brasil",
+    "emissora": "Band",
+    "audiencia_pontos": 12.8,
+    "participantes": [
+      {
+        "nome": "Fernanda Gomes",
+        "idade": 26,
+        "total_votos": 1150,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Curso de Gastronomia",
+            "valor": 6000
+          },
+          {
+            "descricao": "Curso Online Premium",
+            "valor": 1500
+          },
+          {
+            "descricao": "Notebook UltraSlim",
+            "valor": 8000
+          }
+        ]
+      },
+      {
+        "nome": "Thiago Ribeiro",
+        "idade": 30,
+        "total_votos": 870,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Kit de Facas",
+            "valor": 1200
+          }
+        ]
+      },
+      {
+        "nome": "Beatriz Souza",
+        "idade": 24,
+        "total_votos": 980,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Viagem à Itália",
+            "valor": 20000
+          }
+        ]
+      },
+      {
+        "nome": "Henrique Costa",
+        "idade": 32,
+        "total_votos": 920,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Curso de Pâtisserie",
+            "valor": 4500
+          }
+        ]
+      },
+      {
+        "nome": "Renata Lopes",
+        "idade": 27,
+        "total_votos": 880,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Panela Elétrica",
+            "valor": 800
+          }
+        ]
+      },
+      {
+        "nome": "André Silva",
+        "idade": 29,
+        "total_votos": 1020,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Forno Elétrico",
+            "valor": 2000
+          }
+        ]
+      },
+      {
+        "nome": "Juliana Faria",
+        "idade": 28,
+        "total_votos": 750,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Livro de Receitas",
+            "valor": 300
+          }
+        ]
+      },
+      {
+        "nome": "Felipe Martins",
+        "idade": 31,
+        "total_votos": 1100,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Mixer Profissional",
+            "valor": 1200
+          },
+          {
+            "descricao": "Smart Speaker",
+            "valor": 700
+          }
+        ]
+      },
+      {
+        "nome": "Camila Torres",
+        "idade": 25,
+        "total_votos": 970,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Jogo de Panelas",
+            "valor": 1500
+          }
+        ]
+      },
+      {
+        "nome": "Lucas Almeida",
+        "idade": 33,
+        "total_votos": 940,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Curso de Vinhos",
+            "valor": 1000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nome": "The Voice Brasil",
+    "emissora": "TV Globo",
+    "audiencia_pontos": 18.6,
+    "participantes": [
+      {
+        "nome": "Laura Menezes",
+        "idade": 23,
+        "total_votos": 1320,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Microfone Profissional",
+            "valor": 1500
+          },
+          {
+            "descricao": "Notebook UltraSlim",
+            "valor": 8000
+          }
+        ]
+      },
+      {
+        "nome": "Gabriel Santos",
+        "idade": 28,
+        "total_votos": 1190,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Curso de Música",
+            "valor": 3500
+          },
+          {
+            "descricao": "Fone Bluetooth",
+            "valor": 500
+          }
+        ]
+      },
+      {
+        "nome": "Mariana Alves",
+        "idade": 26,
+        "total_votos": 890,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Headphones",
+            "valor": 900
+          }
+        ]
+      },
+      {
+        "nome": "Rafael Lima",
+        "idade": 29,
+        "total_votos": 780,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Teclado Musical",
+            "valor": 2500
+          }
+        ]
+      },
+      {
+        "nome": "Sofia Rocha",
+        "idade": 24,
+        "total_votos": 1020,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Curso de Canto",
+            "valor": 2000
+          }
+        ]
+      },
+      {
+        "nome": "Daniel Freitas",
+        "idade": 32,
+        "total_votos": 940,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Violão",
+            "valor": 1800
+          },
+          {
+            "descricao": "Relógio Inteligente",
+            "valor": 1200
+          }
+        ]
+      },
+      {
+        "nome": "Carolina Silva",
+        "idade": 27,
+        "total_votos": 1100,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Show ao Vivo",
+            "valor": 5000
+          }
+        ]
+      },
+      {
+        "nome": "Matheus Prado",
+        "idade": 30,
+        "total_votos": 970,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Microfone de Estúdio",
+            "valor": 1200
+          }
+        ]
+      },
+      {
+        "nome": "Bruna Torres",
+        "idade": 25,
+        "total_votos": 1040,
+        "eliminado": true,
+        "premios": [
+          {
+            "descricao": "Vale Música",
+            "valor": 600
+          }
+        ]
+      },
+      {
+        "nome": "Igor Ramos",
+        "idade": 31,
+        "total_votos": 1280,
+        "eliminado": false,
+        "premios": [
+          {
+            "descricao": "Contrato Musical",
+            "valor": 80000
+          }
+        ]
+      }
+    ]
+  }
+]
