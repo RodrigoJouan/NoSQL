@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Votação e Acompanhamento - Reality Show</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #edf0f4;
+      --panel: #ffffff;
+      --border: #e0e3eb;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --secondary: #9ca3af;
+      --secondary-hover: #6b7280;
+      --radius: 14px;
+      --shadow-light: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
+      --shadow-inset: inset 4px 4px 8px #d1d9e6, inset -4px -4px 8px #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1200px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-light);
+      padding: 32px;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .panel:hover {
+      transform: translateY(-3px);
+      box-shadow: 4px 4px 12px #d1d9e6, -4px -4px 12px #ffffff;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 0;
+      color: var(--text);
+      font-size: 1.4rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 500;
+      margin-top: 12px;
+      display: block;
+    }
+
+    select, input[type='number'] {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--radius);
+      border: none;
+      background: var(--bg);
+      box-shadow: var(--shadow-inset);
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    select:focus, input:focus {
+      outline: none;
+      box-shadow: inset 2px 2px 6px #cfd6e1, inset -2px -2px 6px #ffffff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      margin-top: 14px;
+      transition: all 0.2s ease;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+      box-shadow: 2px 2px 8px #d1d9e6, -2px -2px 8px #ffffff;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, var(--primary-hover), #1d4ed8);
+      box-shadow: 3px 3px 10px #c8d1e0, -3px -3px 10px #ffffff;
+    }
+
+    button.secondary {
+      background: linear-gradient(135deg, #9ca3af, #6b7280);
+      color: #fff;
+    }
+
+    button.secondary:hover {
+      background: linear-gradient(135deg, #6b7280, #4b5563);
+    }
+
+    #chart-container {
+      width: 100%;
+      height: 380px;
+      margin-top: 20px;
+    }
+
+    #vote-status {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .api-query { margin-top: 24px; }
+
+    pre {
+      background: var(--bg);
+      color: var(--text);
+      padding: 16px;
+      border-radius: var(--radius);
+      white-space: pre-wrap;
+      font-family: 'Courier New', monospace;
+      box-shadow: var(--shadow-inset);
+      margin-top: 12px;
+      max-height: 250px;
+      overflow-y: auto;
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 20px; }
+      .container { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="panel">
+      <h2>Votação</h2>
+      <form id="vote-form">
+        <label for="reality-select">Escolha o Reality Show:</label>
+        <select id="reality-select" name="reality">
+          <option>Carregando...</option>
+        </select>
+
+        <label for="participant-select">Escolha o Participante:</label>
+        <select id="participant-select" name="participant"></select>
+
+        <button type="submit">Votar</button>
+      </form>
+      <p id="vote-status"></p>
+    </div>
+
+    <div class="panel">
+      <h2>Acompanhamento de Votos</h2>
+      <div id="chart-container">
+        <canvas id="votesChart"></canvas>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Consultas</h2>
+
+      <div class="api-query">
+        <button id="btn-premios" class="secondary">Ver Lista de Prêmios</button>
+        <pre id="result-premios"></pre>
+      </div>
+
+      <div class="api-query">
+        <button id="btn-audiencia" class="secondary">Ver Audiência por Emissora</button>
+        <pre id="result-audiencia"></pre>
+      </div>
+
+      <div class="api-query">
+        <button id="btn-total" class="secondary">Ver Total de Prêmios por Reality</button>
+        <pre id="result-total"></pre>
+      </div>
+
+      <div class="api-query">
+        <button id="btn-idade" class="secondary">Ver Mais Novo/Velho (do reality selecionado)</button>
+        <pre id="result-idade"></pre>
+      </div>
+
+      <div class="api-query">
+        <label for="input-valor">Buscar Prêmios Acima de:</label>
+        <input type="number" id="input-valor" placeholder="Ex: 20000" value="20000" />
+        <button id="btn-maior" class="secondary">Buscar</button>
+        <pre id="result-maior"></pre>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const API_URL = 'http://localhost:3000';
+    const realitySelect = document.getElementById('reality-select');
+    const participantSelect = document.getElementById('participant-select');
+    const voteForm = document.getElementById('vote-form');
+    const voteStatus = document.getElementById('vote-status');
+    const chartCanvas = document.getElementById('votesChart');
+
+    let votesChart;
+    let realityShowsData = {};
+
+    async function initializePage() {
+      try {
+        const response = await fetch(`${API_URL}/premios`);
+        if (!response.ok) throw new Error('Falha ao buscar dados da API.');
+        const dataFromApi = await response.json();
+        dataFromApi.forEach((reality) => {
+          const realityName = reality.nome_reality;
+          const participantNames = reality.participantes.map((p) => p.nome_participante);
+          realityShowsData[realityName] = participantNames;
+        });
+        populateRealitySelect();
+        populateParticipants();
+      } catch (error) {
+        realitySelect.innerHTML = `<option>Erro ao carregar</option>`;
+      }
+    }
+
+    function populateRealitySelect() {
+      realitySelect.innerHTML = '';
+      for (const realityName in realityShowsData) {
+        const option = document.createElement('option');
+        option.value = realityName;
+        option.textContent = realityName;
+        realitySelect.appendChild(option);
+      }
+    }
+
+    function populateParticipants() {
+      const selectedReality = realitySelect.value;
+      participantSelect.innerHTML = '';
+      if (realityShowsData[selectedReality]) {
+        realityShowsData[selectedReality].forEach((participantName) => {
+          const option = document.createElement('option');
+          option.value = participantName;
+          option.textContent = participantName;
+          participantSelect.appendChild(option);
+        });
+      }
+      updateChart();
+    }
+
+    async function updateChart() {
+      const realityName = realitySelect.value;
+      if (!realityName) return;
+      try {
+        const response = await fetch(`${API_URL}/votos/${realityName}`);
+        const data = await response.json();
+        const labels = data.map((p) => p.nome);
+        const votes = data.map((p) => p.total_votos);
+        if (votesChart) votesChart.destroy();
+        votesChart = new Chart(chartCanvas, {
+          type: 'bar',
+          data: {
+            labels,
+            datasets: [
+              {
+                label: 'Total de Votos',
+                data: votes,
+                backgroundColor: 'rgba(59, 130, 246, 0.6)',
+                borderColor: 'rgba(37, 99, 235, 1)',
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: { precision: 0, stepSize: 1 },
+              },
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+      } catch (error) {
+        console.error('Erro ao atualizar gráfico:', error);
+      }
+    }
+
+    async function fetchAndDisplay(endpoint, resultElement) {
+      resultElement.textContent = 'Carregando...';
+      try {
+        const response = await fetch(`${API_URL}${endpoint}`);
+        if (!response.ok) throw new Error(`Erro ${response.status}`);
+        const data = await response.json();
+        resultElement.textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        resultElement.textContent = `Erro: ${error.message}`;
+      }
+    }
+
+    function setupApiButton(buttonId, resultId, endpointProvider) {
+      const button = document.getElementById(buttonId);
+      const resultElement = document.getElementById(resultId);
+      const allResultElements = document.querySelectorAll('.api-query pre');
+      button.addEventListener('click', () => {
+        const isVisible = resultElement.style.display === 'block';
+        allResultElements.forEach((el) => {
+          if (el.id !== resultId) el.style.display = 'none';
+        });
+        if (isVisible) {
+          resultElement.style.display = 'none';
+        } else {
+          resultElement.style.display = 'block';
+          const endpoint = endpointProvider();
+          resultElement.textContent = endpoint
+            ? fetchAndDisplay(endpoint, resultElement)
+            : 'Por favor, complete os campos necessários.';
+        }
+      });
+    }
+
+    setupApiButton('btn-premios', 'result-premios', () => '/premios');
+    setupApiButton('btn-audiencia', 'result-audiencia', () => '/audiencia');
+    setupApiButton('btn-total', 'result-total', () => '/total');
+    setupApiButton('btn-idade', 'result-idade', () => {
+      const selectedReality = realitySelect.value;
+      return selectedReality ? `/idade/${selectedReality}` : null;
+    });
+    setupApiButton('btn-maior', 'result-maior', () => {
+      const valor = document.getElementById('input-valor').value;
+      return valor ? `/maior/${valor}` : null;
+    });
+
+    realitySelect.addEventListener('change', populateParticipants);
+
+    voteForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const reality = realitySelect.value;
+      const participant = participantSelect.value;
+      voteStatus.textContent = 'A enviar voto...';
+      try {
+        const response = await fetch(`${API_URL}/votar/${reality}/${participant}`, {
+          method: 'PUT',
+        });
+        if (!response.ok) throw new Error('Falha ao enviar voto.');
+        const result = await response.json();
+        voteStatus.textContent = result.message;
+        setTimeout(() => updateChart(), 500);
+      } catch (err) {
+        voteStatus.textContent = 'Erro ao votar.';
+      }
+    });
+
+    initializePage();
+  </script>
+</body>
+</html>
